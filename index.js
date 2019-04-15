@@ -1,50 +1,52 @@
-const lines = [
-  {
-    background: '#FF9393',
-    updateTime: 1000,
-    elements: [
-      { background: '#fff', width: 25 },
-      { background: '#FEBD01', width: 25 },
-      { background: '#FE01AD', width: 25 },
-    ],
-  },
-  {
-    background: '#8F6FFF',
-    updateTime: 2000,
-  },
-  {
-    background: '#57FF8D',
-    updateTime: 4000,
-    elements: [
-      { background: '#fff', width: 25 },
-      { background: '#4C286F', width: 25 },
-      { background: '#0B85B6', width: 10 },
-      { background: '#092631', width: 25 },
-    ],
-  },
-  {
-    background: '#215505',
-    updateTime: 500,
-    elements: [
-      { background: '#8AA993', width: 25 },
-      { background: '#828E05', width: 50 },
-      { background: '#7A7E4C', width: 25 },
-    ],
-  },
-  {
-    background: '#6D9995',
-    updateTime: 100,
-  },
-  {
-    background: '#ADACAE',
-    updateTime: 1500,
-    elements: [
-      { background: '#1A4F7A', width: 60 },
-      { background: '#EDAD25', width: 20 },
-      { background: '#F9EB18', width: 20 },
-    ],
-  },
-];
+const params = {
+  lines: [
+    {
+      background: '#FF9393',
+      updateTime: 1000,
+      elements: [
+        { background: '#fff', width: 25 },
+        { background: '#FEBD01', width: 25 },
+        { background: '#FE01AD', width: 25 },
+      ],
+    },
+    {
+      background: '#8F6FFF',
+      updateTime: 2000,
+    },
+    {
+      background: '#57FF8D',
+      updateTime: 4000,
+      elements: [
+        { background: '#fff', width: 25 },
+        { background: '#4C286F', width: 25 },
+        { background: '#0B85B6', width: 10 },
+        { background: '#092631', width: 25 },
+      ],
+    },
+    {
+      background: '#215505',
+      updateTime: 500,
+      elements: [
+        { background: '#8AA993', width: 25 },
+        { background: '#828E05', width: 50 },
+        { background: '#7A7E4C', width: 25 },
+      ],
+    },
+    {
+      background: '#6D9995',
+      updateTime: 100,
+    },
+    {
+      background: '#ADACAE',
+      updateTime: 1500,
+      elements: [
+        { background: '#1A4F7A', width: 60 },
+        { background: '#EDAD25', width: 20 },
+        { background: '#F9EB18', width: 20 },
+      ],
+    },
+  ],
+};
 
 const generateRandomColor = () => {
   const letters = '0123456789ABCDEF';
@@ -78,7 +80,7 @@ const createLines = array => {
     newDiv.style.width = '100%';
     newDiv.style.display = 'flex';
     newDiv.style.backgroundColor = line.background;
-    newDiv.style.height = `${Math.round(windowHeight / lines.length).toString()}px`;
+    newDiv.style.height = `${Math.round(windowHeight / params.lines.length).toString()}px`;
     const wrapper = document.querySelector('.wrapper');
     wrapper.appendChild(newDiv);
     if (line.elements) {
@@ -95,5 +97,5 @@ const createLines = array => {
   });
 };
 
-createLines(lines);
-changeColor(lines);
+createLines(params.lines);
+changeColor(params.lines);
